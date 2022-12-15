@@ -13,6 +13,7 @@ import { GestionComponent } from './gestion/gestion.component';
 import { FormserviceService } from './formservice.service';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
 	ReactiveFormsModule,
-	FormsModule
+	FormsModule,
   ],
   providers: [FormserviceService],
     bootstrap: [AppComponent]

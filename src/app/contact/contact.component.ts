@@ -69,8 +69,8 @@ import { FormserviceService } from '../formservice.service';
 
 	<div>
 		<label>Hide:</label>
-		<input type="checkbox" [(ngModel)]="hideEmail">
-	</div>
+		<input type="checkbox" (change)="onCheckboxChange($event)">
+				</div>
 
 	<div *ngIf="!hideEmail">
 		<label>Email:</label>
@@ -99,6 +99,7 @@ export class ContactComponent {
 	
   });
   constructor(private formDataService: FormserviceService) {
+	console.log('La valeur de hideEmail est :', this.hideEmail);
   }
   onSubmit() {
     this.formDataService.setFormData(this.form.getRawValue());
@@ -106,4 +107,20 @@ export class ContactComponent {
   showFormData() {
     this.formSubmitted = true;
   }
+
+
+onCheckboxChange(event: Event) {
+	// Récupérer l'objet HTMLInputElement associé à la checkbox à partir de l'objet event.target
+	const inputElement = event.target as HTMLInputElement;
+  
+	// Récupérer l'état de la checkbox à partir de l'objet inputElement
+	const checked = inputElement ? inputElement.checked : false;
+  
+	// Mettre à jour la valeur de hideEmail en fonction de l'état de la checkbox
+	this.hideEmail = checked;
+
+  }
+  
+
+  
 }
