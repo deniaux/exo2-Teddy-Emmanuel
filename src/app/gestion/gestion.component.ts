@@ -5,19 +5,18 @@ import { Object } from 'ts-toolbelt';
 @Component({
 	selector: 'gestion',
 	template: `
-	<div *ngIf="form.firstName != ''">
-		<p>Prénom : {{ form.firstName }}</p>
-		<p>Nom : {{ form.lastName }}</p>
-		<p>Age : {{ form.age }}</p>
-		<p>Email : {{ form.email }}</p>
-		<p>Commentaire : {{ form.comment }}</p>
-	</div>
-
-
-  
-	<div *ngIf="form.firstName == ''">
-	  <h1>Erreur 404</h1>
-	  <p>Aucun formulaire de contact trouvé.</p>
+	<div name="mainDiv">
+		<div *ngIf="form.firstName != ''">
+			<p>Prénom : {{ form.firstName }}</p>
+			<p>Nom : {{ form.lastName }}</p>
+			<p>Age : {{ form.age }}</p>
+			<p>Email : {{ form.email }}</p>
+			<p>Commentaire : {{ form.comment }}</p>
+		</div>
+		<div *ngIf="form.firstName == ''">
+			<h1>Erreur 404</h1>
+			<p>Aucun formulaire de contact trouvé.</p>
+		</div>
 	</div>
 	<style>
 	.form-group {
@@ -25,6 +24,11 @@ import { Object } from 'ts-toolbelt';
 		background-color: #0069C0;
 		color: #fff;
 	  }
+	
+	  div {
+		text-align: center;
+		
+	}
 	  
 	  .form-control-plaintext {
 		margin-bottom: 20px;

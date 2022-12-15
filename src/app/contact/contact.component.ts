@@ -120,7 +120,6 @@ onCheckboxChange(event: Event) {
 	this.hideEmail = checked;
 
   }
-  
 
   
 }
