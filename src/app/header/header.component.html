@@ -2,6 +2,31 @@
     <ul>
         <li class=""><a routerLink="accueil">Accueil</a></li>
         <li class=""><a href="./list">List</a></li>
-        <li class=""><a href="./gestion">Gestion</a></li>
+        <li class=""><a routerLink="/gestion" (click)="showFormData()">Gestion</a></li>
     </ul>
 </nav>
+<style>nav.crumbs {
+	background-color: #0069C0;
+	color: #ffffff;
+  }
+  
+  nav.crumbs ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+  nav.crumbs ul li {
+	display: inline-block;
+	padding: 10px;
+  }
+  
+  nav.crumbs ul li a {
+	color: #ffffff;
+	text-decoration: none;
+  }
+  
+  nav.crumbs ul li a:hover {
+	text-decoration: underline;
+  }
+  </style>
