@@ -72,10 +72,12 @@ import { FormserviceService } from '../formservice.service';
 		<input type="checkbox" (change)="onCheckboxChange($event)">
 				</div>
 
-	<div *ngIf="!hideEmail">
-		<label>Email:</label>
-		<input type="email" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-	</div>
+		<div [hidden]="hideEmail">
+				<label>Email:</label>
+				<input type="email" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" [required]="!hideEmail">
+		</div>
+			  
+	
   
 	<div>
         <label>Comment:</label>
