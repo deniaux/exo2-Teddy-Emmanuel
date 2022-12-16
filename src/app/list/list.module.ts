@@ -9,13 +9,15 @@ import { AvengerComponent } from './avenger/avenger.component';
 
 
 const routes: Routes = [
-	{ path: '', component: ListComponent, 
-		children:[	{ path: 'retourverslefutur', component: RetourverslefuturComponent },
-					{ path: 'avenger', component: AvengerComponent},
-					{ path: 'starwarsiii' , component: StarwarsIIIComponent},
-					{ path: 'laligneverte', component: LaligneverteComponent},
-					{ path: 'titanic', component: TitanicComponent}
-]},
+	{
+		path: '', component: ListComponent,
+		children: [{ path: 'retourverslefutur', component: RetourverslefuturComponent },
+		{ path: 'avenger', component: AvengerComponent },
+		{ path: 'starwarsiii', component: StarwarsIIIComponent },
+		{ path: 'laligneverte', component: LaligneverteComponent },
+		{ path: 'titanic', component: TitanicComponent }
+		]
+	},
 
 ];
 
@@ -23,10 +25,10 @@ const routes: Routes = [
 	imports: [RouterModule.forChild(routes)],
 	exports: [RouterModule],
 	declarations: [
-   TitanicComponent,
-   LaligneverteComponent,
-   StarwarsIIIComponent,
-   AvengerComponent
+		TitanicComponent,
+		LaligneverteComponent,
+		StarwarsIIIComponent,
+		AvengerComponent
 	]
-  })
+})
 export class ListModule { }

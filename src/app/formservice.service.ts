@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class FormserviceService {
 	private formData: {
@@ -10,33 +10,33 @@ export class FormserviceService {
 		age: string | null;
 		email: string | null;
 		comment: string | null;
-	  } = {
-		firstName: '',
-		lastName: '',
-		age: '',
-		email: '',
-		comment: '',
-	  };
+	} = {
+			firstName: '',
+			lastName: '',
+			age: '',
+			email: '',
+			comment: '',
+		};
 
-	  getFormData(): {
+	getFormData(): {
 		firstName: string | null;
 		lastName: string | null;
 		age: string | null;
 		email: string | null;
 		comment: string | null;
-	  } {
+	} {
 		return this.formData;
-	  }
+	}
 
-	  setFormData(formData: {
+	setFormData(formData: {
 		firstName: string | null;
 		lastName: string | null;
 		age: string | null;
 		email: string | null;
 		comment: string | null;
-	  }) {
+	}) {
 		this.formData = formData;
-	  }
+	}
 
-  constructor() { }
+	constructor() { }
 }

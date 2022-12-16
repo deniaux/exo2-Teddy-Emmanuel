@@ -15,22 +15,22 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    ContactComponent,
-    AccueilComponent,
-    ListComponent,
-    GestionComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-	ReactiveFormsModule,
-	FormsModule,
-  ],
-  providers: [FormserviceService],
-    bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		FooterComponent,
+		ContactComponent,
+		AccueilComponent,
+		ListComponent,
+		GestionComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		ReactiveFormsModule,
+		FormsModule,
+	],
+	providers: [FormserviceService],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

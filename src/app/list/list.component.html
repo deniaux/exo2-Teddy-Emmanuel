@@ -1,40 +1,12 @@
-<body>
-	<div class="container-fluid">
-	  <div class="row">
+<div class="container-fluid">
+	<div class="row">
 		<div class="col-sm-12 col-md-6 offset-md-3">
-		  <ul class="list-inline listefilm">
-			<li class="list-inline-item"><a routerLink="avenger">Avenger</a></li>
-			<li class="list-inline-item"><a routerLink="titanic">Titanic</a></li>
-			<li class="list-inline-item"> <a routerLink="laligneverte">La ligne verte</a></li>
-			<li class="list-inline-item"> <a routerLink="starwarsiii">Star wars III</a></li>
-			<li class="list-inline-item"><a routerLink="retourverslefutur">Retour vers le futur</a></li>
-		  </ul>
-		  <router-outlet></router-outlet>
+			<ul class="list-inline listefilm">
+				<li *ngFor="let film of films" class="list-inline-item">
+					<a routerLink="{{ film.route }}">{{ film.nom }}</a>
+				</li>
+			</ul>
+			<router-outlet></router-outlet>
 		</div>
-	  </div>
 	</div>
-  </body>
-  <style>body .listefilm {
-	text-align: center;
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-  }
-  
-  body .listefilm li {
-	display: inline-block;
-	margin: 10px;
-	font-size: 18px;
-	font-weight: bold;
-  }
-  
-  body .listefilm li a {
-	text-decoration: none;
-	color: #333;
-	transition: all 0.2s ease-in-out;
-  }
-  
-  body .listefilm li a:hover {
-	color: #0069C0;
-  }
-  </style>
+</div>
