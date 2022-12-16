@@ -1,29 +1,43 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-
 	<div>
 		<label>Prénom:</label>
 		<input type="text" formControlName="firstName" required>
+		<div *ngIf="form.get('firstName')!.invalid && form.get('firstName')!.touched">
+			Ce champ est obligatoire
+		</div>
 	</div>
-
 	<div>
 		<label>Nom:</label>
 		<input type="text" formControlName="lastName" required>
+		<div *ngIf="form.get('lastName')!.invalid && form.get('lastName')!.touched">
+			<p class="erreur"> Ce champ est obligatoire</p>
+		</div>
 	</div>
-
 	<div>
 		<label>Age:</label>
-		<input type="number" min="0" max="120" formControlName="age" required>
+		<input type="number" formControlName="age" required>
+		<div *ngIf="form.get('age')!.invalid && form.get('age')!.touched ">
+			<p class="erreur"> Ce champ est obligatoire</p>
+		</div>
+		<div *ngIf="form.get('age')!.hasError('min') && form.get('age')!.touched">
+			L'âge minimum est de 13 ans ! Puis quoi encore mois j'ai dû attendre mes 15 ans avant d'avoir un ordinateur
+			!!!
+		</div>
+		<div *ngIf="form.get('age')!.hasError('max') && form.get('age')!.touched">
+			<p name="erreur">L'âge minimum est de 120 ans ... c'est déjà assez vieux non ? </p>
+		</div>
 	</div>
-
 	<div>
 		<label>Masquer 'Email':</label>
-		<input type="checkbox" (change)="onCheckboxChange($event)">
+		<input type="checkbox" formControlName="hideEmail">
 	</div>
 
-	<div [hidden]="hideEmail">
+	<div *ngIf="form.get('hideEmail')!.value == false || false">
 		<label>Email:</label>
-		<input type="email" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-			[required]="!hideEmail">
+		<input type="email" formControlName="email">
+		<div *ngIf="form.get('age')!.invalid && form.get('email')!.touched">
+			<p name="erreur">Hey l'adresse n'est pas bonne, si tu en veux une va sur https://temp-mail.org/fr/</p>
+		</div>
 	</div>
 
 	<div>

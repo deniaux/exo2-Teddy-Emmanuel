@@ -1,42 +1,34 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { FormserviceService } from '../formservice.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ValidatorFn } from '@angular/forms';
+import { max } from 'rxjs';
 
 @Component({
-	selector: 'app-dynamic-form',
+	selector: 'app-contact',
 	templateUrl: './contact.component.html',
-	styleUrls: ['./contact.component.scss'],
-
+	styleUrls: ['./contact.component.scss']
 })
-
 export class ContactComponent {
-	hideEmail = false;
-	formSubmitted = false;
-	form = new FormGroup({
-		firstName: new FormControl(''),
-		lastName: new FormControl(''),
-		age: new FormControl(''),
-		email: new FormControl(''),
-		comment: new FormControl('')
+	form: FormGroup;
 
-	});
 	
-	constructor(private formDataService: FormserviceService) {
-		console.log('La valeur de hideEmail est :', this.hideEmail);
+
+	constructor() {
+		this.form = new FormGroup({
+			firstName: new FormControl('', [Validators.required]),
+			lastName: new FormControl('', [Validators.required]),
+			age: new FormControl('', [Validators.required, Validators.min(13), Validators.max(120)]),
+			hideEmail: new FormControl(false),
+			email: new FormControl('', [Validators.email]),
+			comment: new FormControl('')
+		});
+		
 	}
+	
+
 	onSubmit() {
-		this.formDataService.setFormData(this.form.getRawValue());
+		console.log('Form submitted!');
+		console.log(this.form.value);
 	}
-	showFormData() {
-		this.formSubmitted = true;
-	}
-
-
-	onCheckboxChange(event: Event) {
-		const inputElement = event.target as HTMLInputElement;
-		const checked = inputElement ? inputElement.checked : false;
-		this.hideEmail = checked;
-	}
-
 
 }
