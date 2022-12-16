@@ -1,10 +1,10 @@
 <div name="mainDiv">
 	<div *ngIf="form.firstName != ''">
-		<p>Prénom : {{ form.firstName }}</p>
-		<p>Nom : {{ form.lastName }}</p>
-		<p>Age : {{ form.age }}</p>
-		<p>Email : {{ form.email }}</p>
-		<p>Commentaire : {{ form.comment }}</p>
+		<p> <b>Prénom :</b> {{ form.firstName }}</p>
+		<p> <b>Nom :</b> {{ form.lastName }}</p>
+		<p> <b>Age :</b> {{ form.age }}</p>
+		<p> <b>Email :</b> {{ form.email }}</p>
+		<p> <b>Commentaire :</b> {{ form.comment }}</p>
 	</div>
 	<div *ngIf="form.firstName == ''">
 		<h1>Erreur 404</h1>
