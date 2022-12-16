@@ -1,12 +1,10 @@
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-12 col-md-6 offset-md-3">
-			<ul class="list-inline listefilm">
-				<li *ngFor="let film of films" class="list-inline-item">
-					<a routerLink="{{ film.route }}">{{ film.nom }}</a>
-				</li>
-			</ul>
-			<router-outlet></router-outlet>
-		</div>
+	<div class="justify-content-center">
+		<ul class="list-inline listefilm">
+			<li *ngFor="let film of films" class="list-inline-item">
+				<a routerLink="{{ film.route }}">{{ film.nom }}</a>
+			</li>
+		</ul>
+		<router-outlet></router-outlet>
 	</div>
 </div>
