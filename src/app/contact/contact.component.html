@@ -1,12 +1,12 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
 	<div>
-		<label>First Name:</label>
+		<label>Prénom:</label>
 		<input type="text" formControlName="firstName" required>
 	</div>
 
 	<div>
-		<label>Last Name:</label>
+		<label>Nom:</label>
 		<input type="text" formControlName="lastName" required>
 	</div>
 
@@ -16,7 +16,7 @@
 	</div>
 
 	<div>
-		<label>Hide:</label>
+		<label>Masquer 'Email':</label>
 		<input type="checkbox" (change)="onCheckboxChange($event)">
 	</div>
 
@@ -26,9 +26,8 @@
 			[required]="!hideEmail">
 	</div>
 
-
 	<div>
-		<label>Comment:</label>
+		<label>Commentaire:</label>
 		<textarea formControlName="comment"></textarea>
 	</div>
 
