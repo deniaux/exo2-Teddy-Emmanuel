@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,9 +8,10 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListComponent } from './list/list.component';
-import { GestionComponent } from './gestion/gestion.component';
-import { FormserviceService } from './formservice.service';
+import { formservice } from './formservice.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { GestionComponent } from './gestion/gestion.component';
 
 
 @NgModule({
@@ -22,15 +22,16 @@ import { FormsModule } from '@angular/forms';
 		ContactComponent,
 		AccueilComponent,
 		ListComponent,
-		GestionComponent
+		GestionComponent			
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		ReactiveFormsModule,
 		FormsModule,
+		CommonModule
 	],
-	providers: [FormserviceService],
+	providers: [formservice],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

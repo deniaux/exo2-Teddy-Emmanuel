@@ -1,29 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { FormserviceService } from '../formservice.service';
-
+import { Component, OnInit } from "@angular/core";
+import { formservice } from "../formservice.service";
+import { Profile } from "../profile";
 @Component({
 	selector: 'gestion',
 	templateUrl: './gestion.component.html',
 	styleUrls: ['./gestion.component.scss']
 })
-export class GestionComponent implements OnInit {
-	form: {
-		firstName: string | null;
-		lastName: string | null;
-		age: string | null;
-		email: string | null;
-		comment: string | null;
-	} = {
-			firstName: null,
-			lastName: null,
-			age: null,
-			email: null,
-			comment: null
-		};
 
-	constructor(private formDataService: FormserviceService) { }
+export class GestionComponent implements OnInit {
+	profile!: Profile
+
+
+
+	constructor(private profileService: formservice) { }
 
 	ngOnInit() {
-		this.form = this.formDataService.getFormData();
-	}
+		this.profile = this.profileService.getProfile();
+		  // La fonction de traitement des données est exécutée ici lorsqu'un nouvel élément est envoyé sur l'observable
+		  console.log(this.profile); // Affiche les données reçues dans la console
+		  this.profile = this.profile;
+		  console.log(this.profile.email);
+		  // Vous pouvez maintenant utiliser l'objet profile comme vous le souhaitez dans votre composant GestionComponent.
+
+	  }
 }

@@ -1,42 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { Profile } from './profile';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class FormserviceService {
-	private formData: {
-		firstName: string | null;
-		lastName: string | null;
-		age: string | null;
-		email: string | null;
-		comment: string | null;
-	} = {
-			firstName: '',
-			lastName: '',
-			age: '',
-			email: '',
-			comment: '',
-		};
+export class formservice {
+	private profilToSend = new Profile;
 
-	getFormData(): {
-		firstName: string | null;
-		lastName: string | null;
-		age: string | null;
-		email: string | null;
-		comment: string | null;
-	} {
-		return this.formData;
+	sendProfile(ProfileReceived: Profile) {
+		this.profilToSend = ProfileReceived;
 	}
 
-	setFormData(formData: {
-		firstName: string | null;
-		lastName: string | null;
-		age: string | null;
-		email: string | null;
-		comment: string | null;
-	}) {
-		this.formData = formData;
-	}
 
-	constructor() { }
+	getProfile() {
+		return this.profilToSend;
+	}
 }
+
+
+
+
+
+

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormserviceService } from '../formservice.service';
-
+import { formservice } from '../formservice.service';
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
@@ -22,10 +21,10 @@ export class HeaderComponent implements OnInit {
 			comment: null
 		};
 
-	constructor(private formDataService: FormserviceService) { }
+	constructor(private formDataService: formservice) { }
 
 	ngOnInit() {
-		this.form = this.formDataService.getFormData();
+		//this.form = this.formDataService.getFormData();
 	}
 
 	showFormData() {

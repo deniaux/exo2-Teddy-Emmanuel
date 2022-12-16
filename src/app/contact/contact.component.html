@@ -24,7 +24,7 @@
 			!!!
 		</div>
 		<div *ngIf="form.get('age')!.hasError('max') && form.get('age')!.touched">
-			<p name="erreur">L'âge minimum est de 120 ans ... c'est déjà assez vieux non ? </p>
+			<p name="erreur">L'âge maximum est de 120 ans ... c'est déjà assez vieux non ? </p>
 		</div>
 	</div>
 	<div>
@@ -35,8 +35,11 @@
 	<div *ngIf="form.get('hideEmail')!.value == false || false">
 		<label>Email:</label>
 		<input type="email" formControlName="email">
-		<div *ngIf="form.get('age')!.invalid && form.get('email')!.touched">
+		<div *ngIf="form.get('email')!.invalid && form.get('email')!.touched && form.get('email')!.value != ''">
 			<p name="erreur">Hey l'adresse n'est pas bonne, si tu en veux une va sur https://temp-mail.org/fr/</p>
+		</div>
+		<div *ngIf="form.get('email')!.value == ''&& form.get('email')!.touched ">
+			<p name="erreur">Ce champ est obligatoire</p>
 		</div>
 	</div>
 
@@ -45,5 +48,5 @@
 		<textarea formControlName="comment"></textarea>
 	</div>
 
-	<button type="submit" [disabled]="!form.valid">Submit</button>
+	<button type="submit" [disabled]="form.invalid">Envoyer</button>
 </form>
