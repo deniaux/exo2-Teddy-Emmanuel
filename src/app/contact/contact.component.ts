@@ -35,14 +35,15 @@ export class ContactComponent {
 
 
 	onSubmit() {
-		console.log("test");
+
 		const profile = new Profile();
 		profile.prenom = this.form.get('firstName')!.value;
 		profile.nom = this.form.get('lastName')!.value;
 		profile.age = this.form.get('age')!.value;
+		profile.hideEmail = this.form.get('hideEmail')?.value;
 		if (this.form.get('hideEmail')?.value == false) profile.email = this.form.get('email')!.value;
 		profile.commentaire = this.form.get('comment')!.value
-		console.log(this.form.get('hideEmail')?.value);
+
 		this.formservice.sendProfile(profile);
 	}
 

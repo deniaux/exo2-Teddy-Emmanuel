@@ -1,6 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { Profile } from './profile';
 
 @Injectable({
@@ -12,7 +10,6 @@ export class formservice {
 	sendProfile(ProfileReceived: Profile) {
 		this.profilToSend = ProfileReceived;
 	}
-
 
 	getProfile() {
 		return this.profilToSend;

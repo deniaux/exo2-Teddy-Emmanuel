@@ -12,6 +12,7 @@ import { formservice } from './formservice.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { GestionComponent } from './gestion/gestion.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { GestionComponent } from './gestion/gestion.component';
 		AppRoutingModule,
 		ReactiveFormsModule,
 		FormsModule,
-		CommonModule
+		CommonModule,
+		RouterModule
 	],
 	providers: [formservice],
 	bootstrap: [AppComponent]
