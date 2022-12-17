@@ -15,16 +15,15 @@
 	</div>
 	<div>
 		<label>Age:</label>
-		<input type="number" formControlName="age" required>
-		<div *ngIf="form.get('age')!.invalid && form.get('age')!.touched ">
+		<input type="number" formControlName="age" min="0" required>
+		<div *ngIf="form.get('age')!.value =='' && form.get('age')!.touched ">
 			<p class="erreur"> Ce champ est obligatoire</p>
 		</div>
 		<div *ngIf="form.get('age')!.hasError('min') && form.get('age')!.touched">
-			L'âge minimum est de 13 ans ! Puis quoi encore mois j'ai dû attendre mes 15 ans avant d'avoir un ordinateur
-			!!!
+			L'âge minimum est de 13 ans ! Puis quoi encore moi j'ai dû attendre mes 15 ans avant d'avoir un ordinateur !
 		</div>
 		<div *ngIf="form.get('age')!.hasError('max') && form.get('age')!.touched">
-			<p name="erreur">L'âge maximum est de 120 ans ... c'est déjà assez vieux non ? </p>
+			<p name="erreur">Kane Tanaka était officiellement reconnue comme l’actuelle doyenne de l’humanité. La Japonaise est morte le 19 avril à l’âge de 119 ans. Jusqu'a preuve du contraire tu n'es pas le nouveau doyen !</p>
 		</div>
 	</div>
 	<div>

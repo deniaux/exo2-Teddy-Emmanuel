@@ -34,7 +34,6 @@ export class ContactComponent {
 
 	}
 
-
 	onSubmit() {
 
 		const profile = new Profile();
@@ -49,12 +48,8 @@ export class ContactComponent {
 
 		this.submited = true;
 		this.form.reset();
-		
+
 	}
-
-
-
-
 
 }
 
