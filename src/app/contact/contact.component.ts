@@ -12,6 +12,7 @@ import { formservice } from '../formservice.service';
 export class ContactComponent {
 	form: FormGroup;
 	service!: formservice;
+	submited!: boolean;
 
 	constructor(private fb: FormBuilder, private formservice: formservice) {
 
@@ -45,6 +46,10 @@ export class ContactComponent {
 		profile.commentaire = this.form.get('comment')!.value
 
 		this.formservice.sendProfile(profile);
+
+		this.submited = true;
+		this.form.reset();
+		
 	}
 
 
