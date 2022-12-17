@@ -13,4 +13,5 @@ export class ListComponent {
 		{ nom: "Star Wars III", route: "starwarsiii" },
 		{ nom: "Retour vers le futur", route: "retourverslefutur" },
 	];
+	
 }
