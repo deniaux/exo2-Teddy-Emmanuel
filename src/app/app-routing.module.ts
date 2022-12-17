@@ -4,7 +4,6 @@ import { ContactComponent } from './contact/contact.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListComponent } from "./list/list.component";
 import { GestionComponent } from './gestion/gestion.component';
-import { ChargementService } from './chargement.service';
 const routes: Routes = [
 	{ path: 'contact', component: ContactComponent },
 	{ path: 'accueil', component: AccueilComponent },
@@ -15,7 +14,7 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes),
-	RouterModule.forRoot(routes, { preloadingStrategy: ChargementService })],
+	RouterModule.forRoot(routes)],
 	exports: [RouterModule],
 })
 export class AppRoutingModule { }

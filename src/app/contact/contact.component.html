@@ -17,7 +17,7 @@
 		<label>Age:</label>
 		<input type="number" formControlName="age" min="0" required>
 		<div *ngIf="form.get('age')!.value =='' && form.get('age')!.touched ">
-			<p class="erreur"> Ce champ est obligatoire</p>
+			<p class="erreur">Ce champ est obligatoire</p>
 		</div>
 		<div *ngIf="form.get('age')!.hasError('min') && form.get('age')!.touched">
 			L'âge minimum est de 13 ans ! Puis quoi encore moi j'ai dû attendre mes 15 ans avant d'avoir un ordinateur !
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<div>
-		<label>Masquer 'Email':</label>
+		<label>Je souhaite ne pas renseigner mon Email :</label>
 		<input type="checkbox" formControlName="hideEmail">
 	</div>
 
@@ -48,5 +48,5 @@
 	</div>
 
 	<button type="submit" [disabled]="form.invalid">Envoyer</button>
-	<p *ngIf="submited==true">Votre formulaire a bien été envoyé ! Merci !</p>
+	<p *ngIf="submited==true">Ton formulaire a bien été envoyé ! Merci !</p>
 </form>

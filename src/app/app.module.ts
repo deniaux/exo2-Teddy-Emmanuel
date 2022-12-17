@@ -8,7 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListComponent } from './list/list.component';
-import { formservice } from './formservice.service';
+import { formservice } from './form.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { GestionComponent } from './gestion/gestion.component';

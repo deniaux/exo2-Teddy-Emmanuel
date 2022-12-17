@@ -14,7 +14,13 @@ export class formservice {
 	getProfile() {
 		return this.profilToSend;
 	}
+	
 }
+
+export class GestionComponent  {}
+
+
+
 
 
 
