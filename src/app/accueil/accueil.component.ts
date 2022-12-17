@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent {
-  
+  showImage = false;
+
+  constructor() {
+    setTimeout(() => {
+      this.showImage = true;
+    }, 0);
+  }
 }

@@ -32,8 +32,11 @@ export class ContactComponent {
 			}
 		});
 
+
+
 	}
 
+	
 	onSubmit() {
 
 		const profile = new Profile();

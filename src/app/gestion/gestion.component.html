@@ -3,8 +3,8 @@
 		<p> <b>Prénom :</b> {{ profile.prenom }}</p>
 		<p> <b>Nom :</b> {{ profile.nom }}</p>
 		<p> <b>Age :</b> {{ profile.age }}</p>
-		<p *ngIf="profile.hideEmail === false" > <b>Email :</b> {{ profile.email }}</p>
-		<p *ngIf="profile.hideEmail === true" >Vous avez décider de ne pas saisir votre Email</p>
+		<p *ngIf="profile.hideEmail === false"> <b>Email :</b> {{ profile.email }}</p>
+		<p *ngIf="profile.hideEmail === true">Vous avez décider de ne pas saisir votre Email</p>
 		<p> <b>Commentaire :</b> {{ profile.commentaire }}</p>
 	</div>
 	<div *ngIf="profile.prenom == null">

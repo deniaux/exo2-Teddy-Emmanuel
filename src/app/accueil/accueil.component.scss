@@ -19,6 +19,20 @@ $purple: #3b3d54;
   box-sizing: border-box;
 }
 
+.fade-in {
+	animation: fadeIn 2s;
+  }
+  
+  @keyframes fadeIn {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  opacity: 1;
+	}
+  }
+  
+
 
 
 /*body{
