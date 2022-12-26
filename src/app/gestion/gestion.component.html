@@ -1,14 +1,16 @@
-<div name="mainDiv">
-	<div *ngIf="profile.prenom != null">
-		<p> <b>Prénom :</b> {{ profile.prenom }}</p>
-		<p> <b>Nom :</b> {{ profile.nom }}</p>
-		<p> <b>Age :</b> {{ profile.age }}</p>
-		<p *ngIf="profile.hideEmail === false"> <b>Email :</b> {{ profile.email }}</p>
-		<p *ngIf="profile.hideEmail === true">Vous avez décider de ne pas saisir votre Email</p>
-		<p> <b>Commentaire :</b> {{ profile.commentaire }}</p>
-	</div>
-	<div *ngIf="profile.prenom == null">
-		<h1>Erreur 404</h1>
-		<p>Aucun formulaire de contact trouvé.</p>
+<div class="w-100 vh-100 d-flex justify-content-center align-items-center">
+	<div name="mainDiv">
+		<div *ngIf="profile.prenom != null">
+			<p> <b>Prénom :</b> {{ profile.prenom }}</p>
+			<p> <b>Nom :</b> {{ profile.nom }}</p>
+			<p> <b>Age :</b> {{ profile.age }}</p>
+			<p *ngIf="profile.hideEmail === false"> <b>Email :</b> {{ profile.email }}</p>
+			<p *ngIf="profile.hideEmail === true">Vous avez décider de ne pas saisir votre Email</p>
+			<p> <b>Commentaire :</b> {{ profile.commentaire }}</p>
+		</div>
+		<div *ngIf="profile.prenom == null">
+			<h1>Erreur 404</h1>
+			<p>Aucun formulaire de contact trouvé.</p>
+		</div>
 	</div>
 </div>
