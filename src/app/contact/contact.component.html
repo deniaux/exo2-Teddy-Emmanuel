@@ -51,9 +51,10 @@
 		</div>
 
 		<div class="checkbox-container">
-			<p class="checkbox-text">Je souhaite ne pas renseigner mon Email :</p>
-			<input class="cbEmail" type="checkbox" formControlName="hideEmail">
-		  </div>
+			<p class="checkbox-text">Je souhaite ne pas renseigner mon Email :&nbsp;</p>
+			<input class="cbEmail" type="checkbox" formControlName="hideEmail" id="switch">
+			<label class="tick" for="switch"></label>
+		</div>
 
 		<button type="submit" [disabled]="form.invalid">Envoyer</button>
 		<p *ngIf="submited==true">Ton formulaire a bien été envoyé ! Merci !</p>

@@ -18,7 +18,8 @@ label {
   font-weight: bold;
 }
 
-input, textarea {
+input,
+textarea {
   box-sizing: border-box;
   width: 100%;
   padding: 0.5em;
@@ -43,42 +44,85 @@ button[disabled] {
 }
 
 .checkbox-container {
-	display: flex;
-	align-items: center;
-  }
-  
-  .checkbox-text {
-	margin-left: auto;
-	font-style: italic;
-  }
-  
+  display: flex;
+  align-items: center;
+}
 
-.erreur {
-	color: red;
-	font-weight: bold;
-	border: 2px solid red;
-	border-radius: 5px;
-	padding: 10px;
-	box-shadow: 0 0 10px red;
-	animation: clignoter 3s infinite;
-	}
-.cbEmail{
-	display: flex;
-	align-items: center;
-	width: auto;
+.checkbox-text {
+  margin-left: auto;
+  font-style: italic;
 }
 
 
-	@keyframes clignoter {
-		0% {
-		opacity: 0;
-		}
-		50% {
-		opacity: 1;
-		}
-		100% {
-		opacity: 0;
-		}
-		}
-		
-		
+.erreur {
+  color: red;
+  font-weight: bold;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 0 5px red;
+  animation: clignoter 3s infinite;
+}
+
+.cbEmail {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+
+@keyframes clignoter {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.tick {
+  cursor: pointer;
+  text-indent: -9999%;
+  width: 40px;
+  height: 20px;
+  background: grey;
+  display: block;
+  border-radius: 20px;
+  position: relative;
+}
+
+.tick:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+input:checked+.tick {
+  background: #38ae28;
+}
+
+input:checked+.tick:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.tick:active:after {
+  width: 20px;
+}
