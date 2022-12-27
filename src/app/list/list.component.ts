@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ListComponent {
 	selectedRoute!: string;
+	selected = false;
+
 	films = [
 		{ nom: "Avenger", route: "avenger", img: "./assets/afficheFilm/avenger.jpeg", description:"Avengers Tous publics 2012 ‧ Aventure/Action ‧ 2h 23m" },
 		{ nom: "Titanic", route: "titanic", img: "./assets/afficheFilm/titanic.jpeg",description:"Titanic Tous publics 1997 ‧ Romance/Drame ‧ 3h 14m" },

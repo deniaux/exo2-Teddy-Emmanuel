@@ -4,7 +4,7 @@
 			<label>Prénom:</label>
 			<input type="text" formControlName="firstName" required>
 			<div *ngIf="form.get('firstName')!.invalid && form.get('firstName')!.touched">
-				Ce champ est obligatoire
+				<p class="erreur"> Ce champ est obligatoire</p>
 			</div>
 		</div>
 		<div>
@@ -21,28 +21,27 @@
 				<p class="erreur">Ce champ est obligatoire</p>
 			</div>
 			<div *ngIf="form.get('age')!.hasError('min') && form.get('age')!.touched">
-				L'âge minimum est de 13 ans ! Puis quoi encore moi j'ai dû attendre mes 15 ans avant d'avoir un
-				ordinateur !
+				<p class="erreur">
+					L'âge minimum est de 13 ans ! Puis quoi encore moi j'ai dû attendre mes 15 ans avant d'avoir un
+					ordinateur !
+				</p>
 			</div>
 			<div *ngIf="form.get('age')!.hasError('max') && form.get('age')!.touched">
-				<p name="erreur">Kane Tanaka était officiellement reconnue comme l’actuelle doyenne de l’humanité. La
+				<p class="erreur">Kane Tanaka était officiellement reconnue comme l’actuelle doyenne de l’humanité. La
 					Japonaise est morte le 19 avril à l’âge de 119 ans. Jusqu'a preuve du contraire tu n'es pas le
 					nouveau doyen !</p>
 			</div>
 		</div>
-		<div>
-			<label>Je souhaite ne pas renseigner mon Email :</label>
-			<input type="checkbox" formControlName="hideEmail">
-		</div>
+
 
 		<div *ngIf="form.get('hideEmail')!.value == false || false">
 			<label>Email:</label>
 			<input type="email" formControlName="email">
 			<div *ngIf="form.get('email')!.invalid && form.get('email')!.touched && form.get('email')!.value != ''">
-				<p name="erreur">Hey l'adresse n'est pas bonne, si tu en veux une va sur https://temp-mail.org/fr/</p>
+				<p class="erreur">Hey l'adresse n'est pas valide, si tu en veux une va sur https://temp-mail.org/fr/</p>
 			</div>
 			<div *ngIf="form.get('email')!.value == ''&& form.get('email')!.touched ">
-				<p name="erreur">Ce champ est obligatoire</p>
+				<p class="erreur">Ce champ est obligatoire</p>
 			</div>
 		</div>
 
@@ -50,6 +49,11 @@
 			<label>Commentaire:</label>
 			<textarea formControlName="comment"></textarea>
 		</div>
+
+		<div class="checkbox-container">
+			<p class="checkbox-text">Je souhaite ne pas renseigner mon Email :</p>
+			<input class="cbEmail" type="checkbox" formControlName="hideEmail">
+		  </div>
 
 		<button type="submit" [disabled]="form.invalid">Envoyer</button>
 		<p *ngIf="submited==true">Ton formulaire a bien été envoyé ! Merci !</p>

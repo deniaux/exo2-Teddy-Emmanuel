@@ -4,7 +4,29 @@
 	padding: 0 20px;
 	text-align: center;
 }
-
+a{
+	font-weight: 700;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+}
+body a:hover {
+	cursor: pointer;
+	color: #0069C0;
+	transition: color 0.5s;
+  }
+      
+  a {
+	color: #000000; /* couleur de police par défaut pour tous les liens */
+  }
+  
+  a.selected {
+	color: #0069C0; /* couleur de police pour le lien sélectionné */
+  }
+  
+  a:not(.selected) {
+	color: #000000; /* couleur de police pour les liens non sélectionnés */
+  }
+  
 .row {
 	display: flex;
 	flex-wrap: wrap;
@@ -46,15 +68,7 @@
 	font-weight: bold;
 }
 
-.listefilm li a {
-	color: #333;
-	text-decoration: none;
-	transition: all 0.2s ease-in-out;
-}
 
-.listefilm li a:hover {
-	color: #0069C0;
-}
 
 #divMain{
 	height: 100vh;

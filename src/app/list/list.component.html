@@ -4,8 +4,11 @@
 
 		<!-- NOMS FILMS -->
 		<li *ngFor="let film of films" class="list-inline-item">
-			<a (click)="selectedRoute = film.route"><b class="user-select-none">{{ film.nom }}</b></a>
-		</li>
+			<a (click)="selectedRoute = film.route" [class.selected]="selectedRoute === film.route" >{{ film.nom }}</a>
+		  </li>
+		  
+		  
+
 	</div>
 
 	<!-- DESCRIPTIONS FILMS -->

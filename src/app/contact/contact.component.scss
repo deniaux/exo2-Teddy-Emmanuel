@@ -42,6 +42,43 @@ button[disabled] {
   cursor: default;
 }
 
-.erreur{
-	text-decoration-color: red;
+.checkbox-container {
+	display: flex;
+	align-items: center;
+  }
+  
+  .checkbox-text {
+	margin-left: auto;
+	font-style: italic;
+  }
+  
+
+.erreur {
+	color: red;
+	font-weight: bold;
+	border: 2px solid red;
+	border-radius: 5px;
+	padding: 10px;
+	box-shadow: 0 0 10px red;
+	animation: clignoter 3s infinite;
+	}
+.cbEmail{
+	display: flex;
+	align-items: center;
+	width: auto;
 }
+
+
+	@keyframes clignoter {
+		0% {
+		opacity: 0;
+		}
+		50% {
+		opacity: 1;
+		}
+		100% {
+		opacity: 0;
+		}
+		}
+		
+		
